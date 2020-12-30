@@ -9,10 +9,7 @@ import { UserService } from '../../services/user.service';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-
-  getUsers(): void {
-    this.userService.getUsers().subscribe((users) => (this.users = users));
-  }
+  value = 'Clear me';
 
   add(firstname: string, lastname: string): void {
     // name = name.trim();
@@ -26,14 +23,9 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  delete(user: User): void {
-    this.users = this.users.filter((h) => h !== user);
-    this.userService.deleteUser(user).subscribe();
-  }
-
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    this.userService.getUsers().subscribe((users) => (this.users = users));
   }
 }

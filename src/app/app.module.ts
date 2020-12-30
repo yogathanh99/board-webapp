@@ -8,6 +8,8 @@ import { UsersComponent } from './components/users/users.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { BoardComponent } from './components/board/board.component';
 import { TaskDetailComponent } from './components/tasks/task-detail/task-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material-module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,14 @@ import { TaskDetailComponent } from './components/tasks/task-detail/task-detail.
     BoardComponent,
     TaskDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

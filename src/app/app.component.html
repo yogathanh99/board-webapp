@@ -3,10 +3,16 @@
     <h1>{{ title }}</h1>
     <div class="menu-list">
       <a routerLink="/board">
-        <div routerLinkActive="active-menu" class="menu-item">Boards</div>
+        <div routerLinkActive="active-menu" class="menu-item">
+          <mat-icon aria-hidden="false" aria-label="board icon" class="menu-item-icon">dashboard</mat-icon>
+          Boards
+        </div>
       </a>
       <a routerLink="/users">
-        <div routerLinkActive="active-menu" class="menu-item">Users</div>
+        <div routerLinkActive="active-menu" class="menu-item">
+          <mat-icon aria-hidden="false" aria-label="person icon" class="menu-item-icon">person</mat-icon>
+          Users
+        </div>
       </a>
     </div>
   </div>

@@ -1,27 +1,37 @@
-<h2>User Management</h2>
+<h2>Users</h2>
 
-<div class="action-container">
-  <label>First name:
-    <input #firstname />
-  </label>
-  <br /><br />
-  <label>Last name:
-    <input #lastname />
-  </label>
-  <br /><br />
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="
+<div>
+  <form>
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput #firstname />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput #lastname />
+    </mat-form-field>
+  </form>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="
       add(firstname.value, lastname.value);
       firstname.value = '';
       lastname.value = ''
-    ">
-    Add user
+    "
+  >
+    Add
   </button>
 </div>
 
-<ul class="list">
-  <li *ngFor="let user of users" class="list-item">
-    <span class="badge"></span> {{ user.firstname }} - {{ user.lastname }}
-    <button class="delete" title="delete user" (click)="delete(user)">x</button>
-  </li>
-</ul>
+<div class="card-list">
+  <div class="card" *ngFor="let user of users">
+    <div class="card_image">
+      <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+    </div>
+    <div class="card_title title-white">
+      <p>{{ user.firstname }} {{ user.lastname }}</p>
+    </div>
+  </div>
+</div>
