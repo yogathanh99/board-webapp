@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../interfaces/user.interface';
+import { User } from '../../interfaces';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -13,7 +13,9 @@ export class UsersComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((users) => (this.users = users));
+    this.userService
+      .getUsers()
+      .subscribe((users: User[]) => (this.users = users));
   }
 
   add(firstname: string, lastname: string): void {
@@ -24,7 +26,6 @@ export class UsersComponent implements OnInit {
     this.userService
       .addUser({ firstname, lastname } as User)
       .subscribe((user: User) => {
-        // this.users.push(user);
         this.users = [...this.users, user];
       });
   }

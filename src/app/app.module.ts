@@ -7,17 +7,10 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { BoardComponent } from './components/board/board.component';
-import { TaskDetailComponent } from './components/tasks/task-detail/task-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    UsersComponent,
-    TasksComponent,
-    BoardComponent,
-    TaskDetailComponent,
-  ],
+  declarations: [AppComponent, UsersComponent, TasksComponent, BoardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

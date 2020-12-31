@@ -1,1 +1,22 @@
-<h1>hello board</h1>
+<h2>Boards</h2>
+
+<div>
+  <form>
+    <mat-form-field>
+      <mat-label>Add new board</mat-label>
+      <input matInput #boardName />
+    </mat-form-field>
+  </form>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="add(boardName.value); boardName.value = ''"
+  >
+    Add
+  </button>
+  <ul>
+    <li *ngFor="let board of boards">
+      <a routerLink="/board/{{ board._id }}">{{ board.name }}</a>
+    </li>
+  </ul>
+</div>
